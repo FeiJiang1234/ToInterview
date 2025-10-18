@@ -1,0 +1,6 @@
+@ToInterview.API_HostAddress = http://localhost:5110
+
+GET {{ToInterview.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
