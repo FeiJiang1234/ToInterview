@@ -7,6 +7,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// 注册委托和事件相关服务
+builder.Services.AddScoped<ToInterview.API.Services.EventService>();
+builder.Services.AddScoped<ToInterview.API.Services.UserEventHandlers>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
