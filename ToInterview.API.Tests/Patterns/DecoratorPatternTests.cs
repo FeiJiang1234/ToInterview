@@ -1,7 +1,7 @@
 using ToInterview.API.Patterns.Decorator;
 using Xunit;
 
-namespace ToInterview.API.Tests
+namespace ToInterview.API.Tests.Patterns
 {
     public class DecoratorPatternTests
     {

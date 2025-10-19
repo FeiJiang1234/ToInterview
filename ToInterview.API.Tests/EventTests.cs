@@ -1,4 +1,5 @@
-﻿using ToInterview.API.Services;
+﻿using ToInterview.API.Delegates;
+using ToInterview.API.Services;
 using Xunit;
 
 namespace ToInterview.API.Tests
@@ -75,6 +76,17 @@ namespace ToInterview.API.Tests
             // Assert
             Assert.False(handler1Called);
             Assert.True(handler2Called);
+        }
+
+        [Fact]
+        public void TestEvent_SubscribeHandler()
+        {
+            Cat cat = new Cat();
+            var mouse = new Mouse();
+
+            cat.CatShout += mouse.Run;
+
+            cat.Shout();
         }
     }
 }

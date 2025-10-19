@@ -1,7 +1,7 @@
 using ToInterview.API.Patterns.SimpleProxy;
 using Xunit;
 
-namespace ToInterview.API.Tests
+namespace ToInterview.API.Tests.Patterns
 {
     public class SimpleProxyTests
     {

@@ -1,7 +1,7 @@
 using ToInterview.API.Patterns.Composite;
 using Xunit;
 
-namespace ToInterview.API.Tests
+namespace ToInterview.API.Tests.Patterns
 {
     public class CompositeTests
     {
@@ -9,7 +9,7 @@ namespace ToInterview.API.Tests
         public void File_ShouldDisplayCorrectly()
         {
             // Arrange
-            var file = new Patterns.Composite.File("test.txt", 1024);
+            var file = new API.Patterns.Composite.File("test.txt", 1024);
 
             // Act & Assert
             // 验证可以显示文件而不抛出异常
@@ -36,8 +36,8 @@ namespace ToInterview.API.Tests
         {
             // Arrange
             var folder = new Folder("测试文件夹");
-            var file1 = new Patterns.Composite.File("file1.txt", 512);
-            var file2 = new Patterns.Composite.File("file2.txt", 1024);
+            var file1 = new API.Patterns.Composite.File("file1.txt", 512);
+            var file2 = new API.Patterns.Composite.File("file2.txt", 1024);
 
             // Act
             folder.Add(file1);
@@ -59,9 +59,9 @@ namespace ToInterview.API.Tests
             // Arrange
             var rootFolder = new Folder("根目录");
             var subFolder = new Folder("子文件夹");
-            var file1 = new Patterns.Composite.File("file1.txt", 1000);
-            var file2 = new Patterns.Composite.File("file2.txt", 2000);
-            var file3 = new Patterns.Composite.File("file3.txt", 3000);
+            var file1 = new API.Patterns.Composite.File("file1.txt", 1000);
+            var file2 = new API.Patterns.Composite.File("file2.txt", 2000);
+            var file3 = new API.Patterns.Composite.File("file3.txt", 3000);
 
             // Act
             rootFolder.Add(file1);
@@ -80,7 +80,7 @@ namespace ToInterview.API.Tests
             // Arrange
             var rootFolder = new Folder("根目录");
             var fileSystemManager = new FileSystemManager(rootFolder);
-            var file = new Patterns.Composite.File("test.txt", 1024);
+            var file = new API.Patterns.Composite.File("test.txt", 1024);
 
             // Act & Assert
             // 验证可以管理文件系统而不抛出异常
@@ -95,8 +95,8 @@ namespace ToInterview.API.Tests
             // Arrange
             var rootFolder = new Folder("根目录");
             var fileSystemManager = new FileSystemManager(rootFolder);
-            var file1 = new Patterns.Composite.File("file1.txt", 1024);
-            var file2 = new Patterns.Composite.File("file2.txt", 512);
+            var file1 = new API.Patterns.Composite.File("file1.txt", 1024);
+            var file2 = new API.Patterns.Composite.File("file2.txt", 512);
 
             // Act & Assert
             // 验证可以处理无效操作而不抛出异常
@@ -112,8 +112,8 @@ namespace ToInterview.API.Tests
             var rootFolder = new Folder("根目录");
             var documentsFolder = new Folder("文档");
             var imagesFolder = new Folder("图片");
-            var file1 = new Patterns.Composite.File("doc1.txt", 1000);
-            var file2 = new Patterns.Composite.File("image1.jpg", 2000);
+            var file1 = new API.Patterns.Composite.File("doc1.txt", 1000);
+            var file2 = new API.Patterns.Composite.File("image1.jpg", 2000);
 
             // Act
             rootFolder.Add(documentsFolder);
