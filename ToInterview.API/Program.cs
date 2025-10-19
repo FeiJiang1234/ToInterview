@@ -1,3 +1,6 @@
+using ToInterview.API.Multithreading;
+using ToInterview.API.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,8 +11,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // 注册委托和事件相关服务
-builder.Services.AddScoped<ToInterview.API.Services.EventService>();
-builder.Services.AddScoped<ToInterview.API.Services.UserEventHandlers>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<UserEventHandlers>();
+builder.Services.AddScoped<MultithreadingExamples>();
+builder.Services.AddScoped<ThreadSafeEventService>();
+builder.Services.AddScoped<ThreadSafeUserEventHandlers>();
 
 var app = builder.Build();
 

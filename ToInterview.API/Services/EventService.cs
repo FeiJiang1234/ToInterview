@@ -46,18 +46,18 @@ public class UserEventHandlers
     public void HandleUserLogin(object? sender, UserEventArgs e)
     {
         _loggedInUsers.Add(e.UserName);
-        _logger.LogInformation("用户 {UserName} 在 {Timestamp} 登录", e.UserName, e.Timestamp);
+        Console.WriteLine("用户 {UserName} 在 {Timestamp} 登录", e.UserName, e.Timestamp);
     }
 
     public void HandleUserLogout(object? sender, UserEventArgs e)
     {
         _loggedInUsers.Remove(e.UserName);
-        _logger.LogInformation("用户 {UserName} 在 {Timestamp} 登出", e.UserName, e.Timestamp);
+        Console.WriteLine("用户 {UserName} 在 {Timestamp} 登出", e.UserName, e.Timestamp);
     }
 
     public void HandleUserAction(object? sender, UserEventArgs e)
     {
-        _logger.LogInformation("用户 {UserName} 在 {Timestamp} 执行了操作: {Action}", 
+        Console.WriteLine("用户 {UserName} 在 {Timestamp} 执行了操作: {Action}", 
             e.UserName, e.Timestamp, e.Action);
     }
 
