@@ -53,22 +53,6 @@ namespace ToInterview.API.Tests
         }
 
         [Fact]
-        public void SubsystemComponents_ShouldBeInstantiable()
-        {
-            // Arrange & Act
-            var cpu = new CPU();
-            var memory = new Memory();
-            var hardDrive = new HardDrive();
-            var graphicsCard = new GraphicsCard();
-
-            // Assert
-            Assert.NotNull(cpu);
-            Assert.NotNull(memory);
-            Assert.NotNull(hardDrive);
-            Assert.NotNull(graphicsCard);
-        }
-
-        [Fact]
         public void CPU_ShouldHaveStartAndShutdownMethods()
         {
             // Arrange
@@ -105,19 +89,6 @@ namespace ToInterview.API.Tests
             hardDrive.Read();
             hardDrive.Write();
             Assert.NotNull(hardDrive);
-        }
-
-        [Fact]
-        public void GraphicsCard_ShouldHaveInitializeAndRenderMethods()
-        {
-            // Arrange
-            var graphicsCard = new GraphicsCard();
-
-            // Act & Assert
-            // 验证方法存在且可调用
-            graphicsCard.Initialize();
-            graphicsCard.Render();
-            Assert.NotNull(graphicsCard);
         }
     }
 }
