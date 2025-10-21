@@ -1,5 +1,5 @@
-using ToInterview.API.Multithreading;
 using ToInterview.API.Services;
+using ToInterview.API.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +16,10 @@ builder.Services.AddScoped<UserEventHandlers>();
 builder.Services.AddScoped<MultithreadingExamples>();
 builder.Services.AddScoped<ThreadSafeEventService>();
 builder.Services.AddScoped<ThreadSafeUserEventHandlers>();
+
+// 配置数据库设置
+var dbSettings = builder.Configuration.GetSection("DbSettings");
+builder.Services.Configure<DbSettings>(dbSettings);
 
 var app = builder.Build();
 
