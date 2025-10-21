@@ -1,3 +1,4 @@
+using ToInterview.API.Multithreading;
 using ToInterview.API.Services;
 using ToInterview.API.Settings;
 
@@ -16,6 +17,8 @@ builder.Services.AddScoped<UserEventHandlers>();
 builder.Services.AddScoped<MultithreadingExamples>();
 builder.Services.AddScoped<ThreadSafeEventService>();
 builder.Services.AddScoped<ThreadSafeUserEventHandlers>();
+
+builder.Services.AddScoped<AsyncAwaitPrincipleDemo>();
 
 // 配置数据库设置
 var dbSettings = builder.Configuration.GetSection("DbSettings");
